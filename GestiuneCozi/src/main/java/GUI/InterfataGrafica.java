@@ -54,22 +54,19 @@ import java.util.List;
             int timpulCurent = 0;
 
             while (timpulCurent <= manager.timpLimita) {
-                // Obținem informațiile actualizate despre clienti și servere
+
                 List<Client> clientiGenerati = manager.getClientiGenerati();
                 Programator programator = manager.getProgramator();
                 List<Server> servere = programator.getServere();
 
-                // Actualizăm label-ul pentru timpul curent
                 timpCurentLabel.setText(String.valueOf(timpulCurent));
 
-                // Actualizăm zona de text pentru clienți
                 StringBuilder clientiBuilder = new StringBuilder();
                 for (Client client : clientiGenerati) {
                     clientiBuilder.append(client.toString()).append("\n");
                 }
                 clientiArea.setText(clientiBuilder.toString());
 
-                // Actualizăm zona de text pentru servere
                 StringBuilder servereBuilder = new StringBuilder();
                 for (Server server : servere) {
                     servereBuilder.append(server.toString()).append("\n");

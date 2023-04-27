@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     public static void main(String[] args)  {
-        ManagerDeSimulare manager = new ManagerDeSimulare(30,10,2,5,50);
+        ManagerDeSimulare manager = new ManagerDeSimulare(35,10,2,6,30);
         Thread t = new Thread(manager);
         t.start();
         InterfataGrafica interfata=new InterfataGrafica(manager);
