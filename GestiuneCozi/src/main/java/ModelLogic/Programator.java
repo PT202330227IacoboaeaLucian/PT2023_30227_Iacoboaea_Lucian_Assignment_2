@@ -41,7 +41,6 @@ public class Programator {
         }
         if (coadaLibera != null) {
             coadaLibera.adaugaClienti(t);
-            //System.out.println("Clientul " + t.toString() + " a fost adaugat in coada " + coadaLibera.getId());
 
         }
     }

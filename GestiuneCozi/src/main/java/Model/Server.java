@@ -17,9 +17,7 @@ public class Server implements Runnable{
     }
     public void adaugaClienti(Client clientNou)  {
             clienti.add(clientNou);
-      //  System.out.println("am adaugat client");
-       // System.out.println(this.toString());
-        perioadaAsteptare.getAndAdd(clientNou.getTimpDeServiciu());
+            perioadaAsteptare.getAndAdd(clientNou.getTimpDeServiciu());
     }
     @Override
     public void run() {
@@ -28,7 +26,6 @@ public class Server implements Runnable{
                 if(!clienti.isEmpty()) {
                     Client client = clienti.peek();
                     int timpProcesare = client.getTimpDeServiciu();
-                   // System.out.println("Clientul " + client.toString() + " a ajuns in fata cozii. El asteapta " + client.getTimpDeServiciu());
                     Thread.sleep(timpProcesare * 1000);
                     perioadaAsteptare.addAndGet(-timpProcesare);
                     clienti.remove(client);

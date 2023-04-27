@@ -1,5 +1,6 @@
 package org.example;
 
+import GUI.InterfataGrafica;
 import Model.Client;
 import Model.Server;
 import ModelLogic.ManagerDeSimulare;
@@ -13,6 +14,8 @@ public class Main {
         ManagerDeSimulare manager = new ManagerDeSimulare(30,10,2,5,50);
         Thread t = new Thread(manager);
         t.start();
-
+        InterfataGrafica interfata=new InterfataGrafica(manager);
+        Thread simulare = new Thread(interfata);
+        simulare.start();
     }
 }
